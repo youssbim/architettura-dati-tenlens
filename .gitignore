@@ -22,6 +22,10 @@ pipeline/data/
 *.fls
 *.fdb_latexmk
 
+# non pubblicati nel repo
+docs/
+img/
+
 # OS / editor
 .DS_Store
 **/.DS_Store
