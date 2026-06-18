@@ -1,0 +1,4 @@
+{"pct":25,"lotti":597980,"lookupP50":1.67,"lookupP95":3.54,"filtroP50":4.84,"filtroP95":55.6,"aggP50":1166.7,"aggP95":3021.9}
+{"pct":50,"lotti":1195960,"lookupP50":1.98,"lookupP95":9.09,"filtroP50":14.88,"filtroP95":117.11,"aggP50":2249.9,"aggP95":3425.6}
+{"pct":75,"lotti":1793940,"lookupP50":0.62,"lookupP95":1.98,"filtroP50":10.02,"filtroP95":133.95,"aggP50":4377.5,"aggP95":6456.1}
+{"pct":100,"lotti":2391921,"lookupP50":1.11,"lookupP95":3.17,"filtroP50":26.27,"filtroP95":187.18,"aggP50":5132.8,"aggP95":10240.8}

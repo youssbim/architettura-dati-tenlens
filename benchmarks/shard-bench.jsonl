@@ -1,0 +1,5 @@
+{"shards":1,"loaded":500000,"dist":[500000],"writeDocsPerSec":19958,"writeMs":25052,"aggP50":1785.7,"aggP95":1885.3,"pointP50":1.32,"pointP95":3.19}
+{"shards":2,"loaded":500000,"dist":[250656,249344],"writeDocsPerSec":23422,"writeMs":21347,"aggP50":1200.6,"aggP95":1507.6,"pointP50":1.87,"pointP95":3.2}
+{"shards":3,"loaded":500000,"dist":[166445,167330,166225],"writeDocsPerSec":24744,"writeMs":20207,"aggP50":1168.8,"aggP95":1296.8,"pointP50":1.86,"pointP95":2.52}
+{"shards":4,"loaded":500000,"dist":[125353,125303,124500,124844],"writeDocsPerSec":25012,"writeMs":19991,"aggP50":1067.3,"aggP95":1180.9,"pointP50":1.89,"pointP95":2.62}
+{"shards":5,"loaded":500000,"dist":[99859,100298,100458,99526,99859],"writeDocsPerSec":25932,"writeMs":19282,"aggP50":1051.2,"aggP95":1125.7,"pointP50":2.01,"pointP95":2.97}

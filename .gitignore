@@ -1,0 +1,28 @@
+# dependencies & build output
+node_modules/
+.next/
+dist/
+out/
+*.tsbuildinfo
+
+# environment & secrets (keep .env.example)
+.env
+.env.local
+.env*.local
+*.pem
+*.key
+
+# frozen ETL data — too large for git (~17 GB), rigenerabile dalla pipeline
+pipeline/data/
+
+# LaTeX intermediates
+*.aux
+*.toc
+*.out
+*.fls
+*.fdb_latexmk
+
+# OS / editor
+.DS_Store
+**/.DS_Store
+*.log

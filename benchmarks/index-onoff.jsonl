@@ -1,0 +1,2 @@
+{"key":"lotti_by_impresa","label":"Trova le gare di un'azienda (lotti.aggiudicazioni.impresa.cf)","withP50":14.86,"withP95":390.14,"noP50":3132.2,"noP95":4303.8,"speedup":210.8}
+{"key":"soggetti_by_nome","label":"Cerca azienda per nome (soggetti.denominazioneNormalizzata)","withP50":0.78,"withP95":1.03,"noP50":73.4,"noP95":95.3,"speedup":94.5}

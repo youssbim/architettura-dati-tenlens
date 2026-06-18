@@ -1,0 +1,23 @@
+# Replica set MongoDB a 3 nodi per l'esperimento di TOLLERANZA AI GUASTI
+# (crollo di un nodo, lettura/scrittura). Stack separato, non tocca garagraph.
+# I membri si annunciano via host.docker.internal:<porta> così sono raggiungibili
+# sia tra container sia dal client sull'host.
+#
+#   docker compose -f docker-compose.bench.yml up -d
+#   npm run bench:failover
+#   docker compose -f docker-compose.bench.yml down -v
+name: garagraph-bench
+
+services:
+  rs1:
+    image: mongo:7
+    command: ["mongod", "--replSet", "rs0", "--bind_ip_all", "--port", "27017"]
+    ports: ["27031:27017"]
+  rs2:
+    image: mongo:7
+    command: ["mongod", "--replSet", "rs0", "--bind_ip_all", "--port", "27017"]
+    ports: ["27032:27017"]
+  rs3:
+    image: mongo:7
+    command: ["mongod", "--replSet", "rs0", "--bind_ip_all", "--port", "27017"]
+    ports: ["27033:27017"]

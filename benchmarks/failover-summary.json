@@ -1,0 +1,40 @@
+{
+  "A": {
+    "scenario": "A",
+    "writeConcern": "{\"w\":\"majority\",\"wtimeout\":10000}",
+    "writes": 35992,
+    "wOk": 35976,
+    "wFail": 16,
+    "acked": 35976,
+    "presentInDb": 35976,
+    "rolledBack": 0,
+    "failoverWindowMs": 9985,
+    "killedAt": 5000,
+    "reads": 711,
+    "readsFailedAfterKill": 0
+  },
+  "B": {
+    "scenario": "B",
+    "writeConcern": "{\"w\":1}",
+    "writes": 149284,
+    "wOk": 149268,
+    "wFail": 16,
+    "acked": 149268,
+    "presentInDb": 149268,
+    "rolledBack": 0,
+    "failoverWindowMs": 10236,
+    "killedAt": 4999,
+    "reads": 711,
+    "readsFailedAfterKill": 0
+  },
+  "C": {
+    "scenario": "C",
+    "writesDuringReadonly": 7,
+    "writesOkDuringReadonly": 1,
+    "readsDuringReadonly": 150,
+    "readsOkDuringReadonly": 150,
+    "writesOkAfterRestart": 9992,
+    "killAt": 5000,
+    "restartAt": 16000
+  }
+}

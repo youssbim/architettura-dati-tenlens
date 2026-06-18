@@ -1,0 +1,42 @@
+# Cluster MongoDB SHARDATO per l'esperimento di scaling sui nodi (Condizione 2).
+# 1 config server (RS) + 3 shard (ognuno RS single-node) + router mongos.
+# Il CLIENT parla solo a mongos (localhost:27050) → niente problema host.docker.internal
+# lato client; i nodi interni si annunciano via host.docker.internal.
+# Stack separato, non tocca garagraph.
+#
+#   docker compose -f docker-compose.shard.yml up -d
+#   bash scripts/shard-setup.sh        # init RS + addShard(1) + shardCollection
+#   npm run bench:shard                # carica dati + misura 1→2→3 shard
+#   docker compose -f docker-compose.shard.yml down -v
+name: garagraph-shard
+
+services:
+  cfg:
+    image: mongo:7
+    command: ["mongod", "--configsvr", "--replSet", "cfg", "--port", "27017", "--bind_ip_all", "--wiredTigerCacheSizeGB", "0.25"]
+    ports: ["27040:27017"]
+  shard1:
+    image: mongo:7
+    command: ["mongod", "--shardsvr", "--replSet", "shard1", "--port", "27017", "--bind_ip_all", "--wiredTigerCacheSizeGB", "0.5"]
+    ports: ["27041:27017"]
+  shard2:
+    image: mongo:7
+    command: ["mongod", "--shardsvr", "--replSet", "shard2", "--port", "27017", "--bind_ip_all", "--wiredTigerCacheSizeGB", "0.5"]
+    ports: ["27042:27017"]
+  shard3:
+    image: mongo:7
+    command: ["mongod", "--shardsvr", "--replSet", "shard3", "--port", "27017", "--bind_ip_all", "--wiredTigerCacheSizeGB", "0.5"]
+    ports: ["27043:27017"]
+  shard4:
+    image: mongo:7
+    command: ["mongod", "--shardsvr", "--replSet", "shard4", "--port", "27017", "--bind_ip_all", "--wiredTigerCacheSizeGB", "0.5"]
+    ports: ["27044:27017"]
+  shard5:
+    image: mongo:7
+    command: ["mongod", "--shardsvr", "--replSet", "shard5", "--port", "27017", "--bind_ip_all", "--wiredTigerCacheSizeGB", "0.5"]
+    ports: ["27045:27017"]
+  mongos:
+    image: mongo:7
+    command: ["mongos", "--configdb", "cfg/host.docker.internal:27040", "--port", "27017", "--bind_ip_all"]
+    ports: ["27050:27017"]
+    depends_on: [cfg]
